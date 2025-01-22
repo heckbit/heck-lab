@@ -7,7 +7,7 @@ services:
       - PUID=1000
       - PGID=1000
       - VERSION=docker
-      - PLEX_CLAIM=claim-c36vZyNgg_sgxZBuT4zt
+      - PLEX_CLAIM=${CLAIM_CODE}
     ports:
       - 32400:32400
       - 3005:3005
