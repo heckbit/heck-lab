@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   mysql:
-    image: mysql:8.0
+    image: mysql:8.0 
     container_name: data_hub
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
@@ -9,8 +9,6 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - v_data_hub:/var/lib/mysql
-      - ~/home_lab/docker/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+      - ${DATA_PATH}:/var/lib/mysql
+      - ${CNF_PATH}:/etc/mysql/mysql.conf.d/mysqld.cnf
     restart: always
-volumes:
-  v_data_hub:

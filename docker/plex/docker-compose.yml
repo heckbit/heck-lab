@@ -18,7 +18,7 @@ services:
       - 32414:32414/udp
       - 32469:32469
     volumes:
-      - ./config:/config
-      - ./transcode:/transcode
-      - ./media:/data
+      - ${DATA_PATH}/config:/config
+      - ${DATA_PATH}/transcode:/transcode
+      - ${DATA_PATH}/media:/data
     restart: always

@@ -3,12 +3,9 @@ services:
     container_name: home_assistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
-      - /home/heckbit/home_lab/home_assistant/config:/config
+      - ${CFG_PATH}:/config
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
     restart: always
     privileged: true
     network_mode: host
-
-volumes:
-  v_home_assistant:
